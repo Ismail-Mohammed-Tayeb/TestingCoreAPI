@@ -21,6 +21,16 @@ namespace TestingCoreAPI.Controllers
         {
             return new Random().Next(500, 9999);
         }
+        
+        [HttpGet]
+        [Route("api/Test/GetBigList")]
+
+        public List<int> GetBigList()
+        {
+            List<int> res = new List<int>();
+            for(int i =0; i< 9999; i++) res.Add(new Random().Next(500, 9999));
+            return res;
+        }
 
     }
 }
