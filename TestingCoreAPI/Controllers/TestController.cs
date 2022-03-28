@@ -16,7 +16,7 @@ namespace TestingCoreAPI.Controllers
         }
         
         [HttpGet]
-        [Route(api/Test/GetRandomString)]
+        [Route("api/Test/GetRandomString")]
         [HttpGet]
         public string GetRandomString(int length=10){
           int wordLength = length;
