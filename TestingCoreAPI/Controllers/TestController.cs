@@ -27,7 +27,9 @@ namespace TestingCoreAPI.Controllers
             {
                 newText += (char)random.Next('A', 'z');
             }
-            return JsonSerializer.Serialize(newText);
+            Dictionary<string, string> dictionary = new Dictionary<string, string>();
+            dictionary.Add("Value", newText);
+            return JsonSerializer.Serialize(dictionary);
         }
         
         [Route("api/Test/GetBiggerRandom")]
