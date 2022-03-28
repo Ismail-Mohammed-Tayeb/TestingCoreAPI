@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System;
+using System.Text.Json;
 
 namespace TestingCoreAPI.Controllers
 {
@@ -26,7 +27,7 @@ namespace TestingCoreAPI.Controllers
             {
                 newText += (char)random.Next('A', 'z');
             }
-            return newText;
+            return JsonSerializer.Serialize(newText);
         }
         
         [Route("api/Test/GetBiggerRandom")]
