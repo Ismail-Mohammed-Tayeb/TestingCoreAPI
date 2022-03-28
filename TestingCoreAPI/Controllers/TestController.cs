@@ -14,8 +14,21 @@ namespace TestingCoreAPI.Controllers
         public IActionResult Get() {
             return Ok(new Random().Next(0, 200));
         }
-
+        
         [HttpGet]
+        [Route(api/Test/GetRandomString)]
+        [HttpGet]
+        public string GetRandomString(int length=10){
+          int wordLength = length;
+            Random random = new Random();
+            string newText = string.Empty;
+            for (int i = 0; i < wordLength; i++)
+            {
+                newText += (char)random.Next('A', 'z');
+            }
+            return newText;
+        }
+        
         [Route("api/Test/GetBiggerRandom")]
 
         public int GetBiggerRandom()
